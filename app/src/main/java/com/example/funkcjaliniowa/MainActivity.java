@@ -33,6 +33,10 @@ public class MainActivity extends AppCompatActivity {
                 intent = new Intent(MainActivity.this, ProstaPrzezPunkty.class);
                 startActivity(intent);
                 break;
+            case R.id.rownlBtn:
+                intent = new Intent(MainActivity.this, ProstaRownolegla.class);
+                startActivity(intent);
+                break;
         }
     }
 }

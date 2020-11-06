@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ProstopadloscProstej">
+    tools:context="com.example.funkcjaliniowa.ProstaRownolegla">
 
     <TextView
         android:id="@+id/textView6"
@@ -82,7 +82,7 @@
         android:layout_marginStart="162dp"
         android:layout_marginTop="41dp"
         android:layout_marginEnd="162dp"
-        android:onClick="obl"
+        android:onClick="row"
         android:text="OBLICZ"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

@@ -2,7 +2,9 @@ package com.example.funkcjaliniowa;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -23,6 +25,24 @@ public class PunktyWspolliniowe extends AppCompatActivity {
         rownanieTv = (TextView) findViewById(R.id.rownanieTv);
         wynikTv = (TextView) findViewById(R.id.wynikTv);
         prawdaTv = (TextView) findViewById(R.id.prawdaTv);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setTitle("Punkty współliniowe");
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                Intent intent = new Intent(PunktyWspolliniowe.this, MainActivity.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(intent);
+                finish();
+                return true;
+
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 
     public void oblicz(View view) {

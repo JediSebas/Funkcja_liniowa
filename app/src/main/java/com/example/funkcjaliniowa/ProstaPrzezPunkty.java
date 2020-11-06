@@ -2,7 +2,9 @@ package com.example.funkcjaliniowa;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -19,6 +21,24 @@ public class ProstaPrzezPunkty extends AppCompatActivity {
         y1Et = (EditText) findViewById(R.id.y1Et);
         y2Et = (EditText) findViewById(R.id.y2Et);
         wzorTv = (TextView) findViewById(R.id.wzorTv);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setTitle("Prosta przez punkty");
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                Intent intent = new Intent(ProstaPrzezPunkty.this, MainActivity.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(intent);
+                finish();
+                return true;
+
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 
     public void obli(View view) {

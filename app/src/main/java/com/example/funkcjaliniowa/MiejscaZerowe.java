@@ -2,7 +2,9 @@ package com.example.funkcjaliniowa;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -19,6 +21,24 @@ public class MiejscaZerowe extends AppCompatActivity {
         bEt = (EditText) findViewById(R.id.bEt);
         wyn1Tv = (TextView) findViewById(R.id.wyn1Tv);
         wyn2Tv = (TextView) findViewById(R.id.wyn2Tv);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setTitle("Miejsca zerowe");
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                Intent intent = new Intent(MiejscaZerowe.this, MainActivity.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(intent);
+                finish();
+                return true;
+
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 
     public void check(View view) {
