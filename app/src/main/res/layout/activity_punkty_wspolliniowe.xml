@@ -43,25 +43,27 @@
         app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
     <EditText
-        android:id="@+id/ayEt"
-        android:layout_width="134dp"
-        android:layout_height="57dp"
-        android:layout_marginTop="30dp"
-        android:layout_marginEnd="16dp"
-        android:ems="10"
-        android:inputType="numberSigned"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <EditText
         android:id="@+id/axEt"
         android:layout_width="134dp"
         android:layout_height="57dp"
         android:layout_marginTop="30dp"
         android:layout_marginEnd="32dp"
         android:ems="10"
-        android:inputType="numberSigned"
+        android:hint="x"
+        android:inputType="numberSigned|numberDecimal"
         app:layout_constraintEnd_toStartOf="@+id/ayEt"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/ayEt"
+        android:layout_width="134dp"
+        android:layout_height="57dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="16dp"
+        android:ems="10"
+        android:hint="y"
+        android:inputType="numberSigned|numberDecimal"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
@@ -71,7 +73,8 @@
         android:layout_marginTop="22dp"
         android:layout_marginEnd="32dp"
         android:ems="10"
-        android:inputType="numberSigned"
+        android:hint="x"
+        android:inputType="numberSigned|numberDecimal"
         app:layout_constraintEnd_toStartOf="@+id/byEt"
         app:layout_constraintTop_toBottomOf="@+id/axEt" />
 
@@ -82,7 +85,8 @@
         android:layout_marginTop="21dp"
         android:layout_marginEnd="32dp"
         android:ems="10"
-        android:inputType="numberSigned"
+        android:hint="x"
+        android:inputType="numberSigned|numberDecimal"
         app:layout_constraintEnd_toStartOf="@+id/cyEt"
         app:layout_constraintTop_toBottomOf="@+id/bxEt" />
 
@@ -93,7 +97,8 @@
         android:layout_marginTop="22dp"
         android:layout_marginEnd="16dp"
         android:ems="10"
-        android:inputType="numberSigned"
+        android:hint="y"
+        android:inputType="numberSigned|numberDecimal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ayEt" />
 
@@ -104,7 +109,8 @@
         android:layout_marginTop="21dp"
         android:layout_marginEnd="16dp"
         android:ems="10"
-        android:inputType="numberSigned"
+        android:hint="y"
+        android:inputType="numberSigned|numberDecimal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/byEt" />
 
