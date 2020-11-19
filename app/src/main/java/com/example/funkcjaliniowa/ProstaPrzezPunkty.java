@@ -9,6 +9,8 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
 public class ProstaPrzezPunkty extends AppCompatActivity {
     private EditText x1Et, x2Et, y1Et, y2Et;
     private TextView wzorTv;
@@ -21,6 +23,18 @@ public class ProstaPrzezPunkty extends AppCompatActivity {
         y1Et = (EditText) findViewById(R.id.y1Et);
         y2Et = (EditText) findViewById(R.id.y2Et);
         wzorTv = (TextView) findViewById(R.id.wzorTv);
+
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fabpzp);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                x1Et.setText("");
+                x2Et.setText("");
+                y1Et.setText("");
+                y2Et.setText("");
+            }
+        });
+
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setTitle("Prosta przez punkty");
@@ -67,6 +81,9 @@ public class ProstaPrzezPunkty extends AppCompatActivity {
                 a *= 1000;
                 a = Math.round(a);
                 a /= 1000;
+                b *= 1000;
+                b = Math.round(b);
+                b /= 1000;
                 if (b > 0){
                     wzorTv.setText("y = " + a + "x + " + b);
                 }else if (b < 0){
