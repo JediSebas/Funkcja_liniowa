@@ -33,6 +33,17 @@ public class ProstopadloscProstej extends AppCompatActivity{
                         .setAction("Action", null).show();
             }
         });
+
+        FloatingActionButton fabpp = (FloatingActionButton) findViewById(R.id.fabpp);
+        fabpp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                aEt.setText("");
+                xEt.setText("");
+                yEt.setText("");
+            }
+        });
+        
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setTitle("Prostopadłość prostej");
@@ -75,6 +86,9 @@ public class ProstopadloscProstej extends AppCompatActivity{
             ap *= 1000;
             ap = Math.round(ap);
             ap /= 1000;
+            b *= 1000;
+            b = Math.round(b);
+            b /= 1000;
             if (b > 0){
                 wynTv.setText("y = " + ap + "x + " + b);
             }else if (b < 0){
