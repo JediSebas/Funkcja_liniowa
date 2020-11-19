@@ -9,6 +9,8 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
 public class MiejscaZerowe extends AppCompatActivity {
 
     private EditText aEt, bEt;
@@ -21,6 +23,16 @@ public class MiejscaZerowe extends AppCompatActivity {
         bEt = (EditText) findViewById(R.id.bEt);
         wyn1Tv = (TextView) findViewById(R.id.wyn1Tv);
         wyn2Tv = (TextView) findViewById(R.id.wyn2Tv);
+
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fabmz);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                aEt.setText("");
+                bEt.setText("");
+            }
+        });
+
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setTitle("Miejsca zerowe");
