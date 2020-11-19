@@ -34,6 +34,17 @@ public class ProstaRownolegla extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+
+        FloatingActionButton fabpr = (FloatingActionButton) findViewById(R.id.fabpr);
+        fabpr.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                aEt.setText("");
+                xEt.setText("");
+                yEt.setText("");
+            }
+        });
+
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setTitle("Prosta równoległa");
@@ -71,6 +82,9 @@ public class ProstaRownolegla extends AppCompatActivity {
         } catch (NumberFormatException e) { yEt.setText("0"); }
         finally {
             b = y - a*x;
+            b *= 1000;
+            b = Math.round(b);
+            b /= 1000;
             if (b > 0){
                 wynTv.setText("y = " + a + "x + " + b);
             }else if (b < 0){
