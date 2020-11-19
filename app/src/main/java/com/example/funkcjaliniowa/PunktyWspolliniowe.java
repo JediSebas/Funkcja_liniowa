@@ -9,6 +9,8 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
 public class PunktyWspolliniowe extends AppCompatActivity {
     private EditText axEt, ayEt, bxEt, byEt, cxEt, cyEt;
     private TextView rownanieTv, wynikTv, prawdaTv;
@@ -25,6 +27,20 @@ public class PunktyWspolliniowe extends AppCompatActivity {
         rownanieTv = (TextView) findViewById(R.id.rownanieTv);
         wynikTv = (TextView) findViewById(R.id.wynikTv);
         prawdaTv = (TextView) findViewById(R.id.prawdaTv);
+
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fabwsp);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                axEt.setText("");
+                bxEt.setText("");
+                cxEt.setText("");
+                ayEt.setText("");
+                byEt.setText("");
+                cyEt.setText("");
+            }
+        });
+
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setTitle("Punkty współliniowe");
